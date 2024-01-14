@@ -1,0 +1,22 @@
+def check_palindrome_number(num):
+    original_num = num  # Store the original number
+    reverse_num = 0  # Initialize a variable to store the reverse of the number
+    while num > 0:
+        remainder = num % 10  # Get the last digit of the number
+        reverse_num = reverse_num * 10 + remainder  # Build the reverse number digit by digit
+        num = num // 10  # Remove the last digit from the number
+
+    # Check if the original number is equal to its reverse
+    if original_num == reverse_num:
+        return True  # The number is a palindrome
+    else:
+        return False  # The number is not a palindrome
+
+# Accept input for the number to check
+number = int(input("Enter a number to check for palindrome: "))
+
+# Call the function to check for palindrome and print the result
+if check_palindrome_number(number):
+    print(f"{number} is a palindrome number")
+else:
+    print(f"{number} is not a palindrome number")
