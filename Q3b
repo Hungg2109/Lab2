@@ -1,0 +1,34 @@
+def decimal_to_binary(number):
+    return bin(number).replace("0b", "")  # Convert decimal to binary format
+
+
+def sum_of_digits(number):
+    return sum(int(digit) for digit in str(number))  # Calculate the sum of all digits
+
+
+def reverse_number(number):
+    return int(str(number)[::-1])  # Reverse the number
+
+
+# Input an integer number n (with input validation)
+while True:
+    n = int(input("Enter an integer number n: "))
+    if n > 0:
+        break
+    else:
+        print("Invalid input. Please enter a positive integer.")
+
+# Display n in binary number format
+binary_format = decimal_to_binary(n)
+print(f"The binary representation of {n} is: {binary_format}")
+
+# Re-input n (without input validation) and perform other calculations
+n = int(input("Enter another integer number n: "))
+sum_of_digits_result = sum_of_digits(n)
+reverse_number_result = reverse_number(n)
+
+# Display the sum of all digits of n
+print(f"The sum of all digits of {n} is: {sum_of_digits_result}")
+
+# Find the number m, which is the reverse of n
+print(f"The reverse of {n} is: {reverse_number_result}")
