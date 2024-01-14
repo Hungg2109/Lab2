@@ -1,0 +1,27 @@
+# Function with default argument
+def multiply_numbers(m, n=10):
+    return m * n
+
+# Outer function with inner function to calculate addition and add 5
+def outer_function(a, b):
+    def inner_function(x, y):
+        return x + y
+    
+    addition = inner_function(a, b)  # Calling the inner function to calculate the addition of a and b
+    result = addition + 5  # Adding 5 to the calculated addition
+    
+    return result
+
+# Accepting input for the two numbers
+m = int(input("Enter the first integer number (m): "))
+n = int(input("Enter the second integer number (n): "))
+a = int(input("Enter the first number (a): "))
+b = int(input("Enter the second number (b): "))
+
+# Calling the function with default argument
+result_with_default = multiply_numbers(m)
+print(f"The result of multiplying {m} with the default value of n is: {result_with_default}")
+
+# Calling the outer function
+final_result = outer_function(a, b)
+print(f"The result after adding 5 to the addition of {a} and {b} is: {final_result}")
