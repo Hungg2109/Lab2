@@ -1,0 +1,43 @@
+def calculate_S1(n):
+    return sum(range(1, n+1))
+
+def calculate_S2(n):
+    factorial = 1
+    for i in range(1, n+1):
+        factorial *= i
+    return factorial
+
+def calculate_S3(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i * (i+1)
+    return total
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Input an integer number n > 5
+n = int(input("Enter an integer number greater than 5: "))
+while n <= 5:
+    n = int(input("Please re-enter an integer number greater than 5: "))
+
+# Calculate S1, S2, and S3
+S1 = calculate_S1(n)
+S2 = calculate_S2(n)
+S3 = calculate_S3(n)
+
+# Check whether n is a prime number or not
+prime_check = is_prime(n)
+if prime_check:
+    print(f"{n} is a prime number")
+else:
+    print(f"{n} is not a prime number")
+
+print(f"S1 = {S1}")
+print(f"S2 = {S2}")
+print(f"S3 = {S3}")
