@@ -1,0 +1,44 @@
+import math
+
+# Function to check if a number is prime
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Function to find all common prime divisors of two numbers
+def common_prime_divisors(m, n):
+    common_divisors = []
+    for i in range(2, min(m, n) + 1):
+        if m % i == 0 and n % i == 0 and is_prime(i):
+            common_divisors.append(i)
+    return common_divisors
+
+# Function to find the greatest common divisor (GCD) of two numbers
+def gcd(m, n):
+    while n != 0:
+        m, n = n, m % n
+    return m
+
+# Function to find the least common multiple (LCM) of two numbers
+def lcm(m, n):
+    return abs(m * n) // gcd(m, n)
+
+# Input two integer numbers
+m = int(input("Enter the first integer number (m): "))
+n = int(input("Enter the second integer number (n): "))
+
+# Display all common prime divisors of the numbers
+common_divisors = common_prime_divisors(m, n)
+print(f"The common prime divisors of {m} and {n} are: {common_divisors}")
+
+# Find the greatest common divisor (GCD) of the numbers
+gcd_result = gcd(m, n)
+print(f"The greatest common divisor (GCD) of {m} and {n} is: {gcd_result}")
+
+# Find the least common multiple (LCM) of the numbers
+lcm_result = lcm(m, n)
+print(f"The least common multiple (LCM) of {m} and {n} is: {lcm_result}")
