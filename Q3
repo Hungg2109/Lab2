@@ -1,0 +1,15 @@
+# Task 1: Create a recursive function to calculate the sum of numbers from 0 to 10
+def calculate_sum_recursive(number):
+    if number <= 0:
+        return 0
+    else:
+        return number + calculate_sum_recursive(number - 1)
+
+# Calling the recursive function to calculate the sum of numbers from 0 to 10
+result = calculate_sum_recursive(10)
+print(f"The sum of numbers from 0 to 10 is: {result}")
+
+# Task 2: Assign a different name to function and call it through the new name
+new_function_name = calculate_sum_recursive  # Assigning a different name to the function
+result_new_name = new_function_name(10)  # Calling the function through the new name
+print(f"The sum of numbers from 0 to 10 using the new function name is: {result_new_name}")
